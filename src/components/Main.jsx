@@ -1,8 +1,10 @@
-import { View, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
+import { Text, StyleSheet, View } from 'react-native';
 import RepositoryList from './RepositoryList';
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: Constants.statusBarHeight,
     flex: 1,
   },
 });

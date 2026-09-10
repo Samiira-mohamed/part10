@@ -1,9 +1,7 @@
-import Main from './src/Main';
+import Main from './src/components/Main';
 
 const App = () => {
-  return (
-    <Main />
-  );
+  return <Main />;
 };
 
 export default App;
