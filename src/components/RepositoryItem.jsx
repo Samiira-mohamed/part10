@@ -1,4 +1,6 @@
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
+import Text from './Text';
+import theme from '../theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -7,7 +9,7 @@ const styles = StyleSheet.create({
   },
   topRow: {
     flexDirection: 'row',
-    marginBottom: 10,
+    marginBottom: 15,
   },
   avatar: {
     width: 50,
@@ -17,35 +19,27 @@ const styles = StyleSheet.create({
   },
   infoContainer: {
     flexShrink: 1,
-  },
-  fullName: {
-    fontWeight: '700',
+    justifyContent: 'space-between',
   },
   description: {
-    color: '#586069',
+    marginTop: 4,
+    marginBottom: 6,
   },
   languageTag: {
-    backgroundColor: '#0366d6',
+    backgroundColor: theme.colors.primary,
     color: 'white',
     alignSelf: 'flex-start',
-    paddingHorizontal: 5,
-    paddingVertical: 3,
-    borderRadius: 3,
-    marginTop: 5,
+    paddingHorizontal: 7,
+    paddingVertical: 4,
+    borderRadius: 4,
+    fontSize: theme.fontSizes.body,
   },
   statsRow: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 10,
   },
   statItem: {
     alignItems: 'center',
-  },
-  statCount: {
-    fontWeight: '700',
-  },
-  statLabel: {
-    color: '#586069',
   },
 });
 
@@ -65,27 +59,29 @@ const RepositoryItem = ({ item }) => {
           source={{ uri: item.ownerAvatarUrl }}
         />
         <View style={styles.infoContainer}>
-          <Text style={styles.fullName}>{item.fullName}</Text>
-          <Text style={styles.description}>{item.description}</Text>
+          <Text fontWeight="bold">{item.fullName}</Text>
+          <Text color="textSecondary" style={styles.description}>
+            {item.description}
+          </Text>
           <Text style={styles.languageTag}>{item.language}</Text>
         </View>
       </View>
       <View style={styles.statsRow}>
         <View style={styles.statItem}>
-          <Text style={styles.statCount}>{formatCount(item.stargazersCount)}</Text>
-          <Text style={styles.statLabel}>Stars</Text>
+          <Text fontWeight="bold">{formatCount(item.stargazersCount)}</Text>
+          <Text color="textSecondary">Stars</Text>
         </View>
         <View style={styles.statItem}>
-          <Text style={styles.statCount}>{formatCount(item.forksCount)}</Text>
-          <Text style={styles.statLabel}>Forks</Text>
+          <Text fontWeight="bold">{formatCount(item.forksCount)}</Text>
+          <Text color="textSecondary">Forks</Text>
         </View>
         <View style={styles.statItem}>
-          <Text style={styles.statCount}>{item.reviewCount}</Text>
-          <Text style={styles.statLabel}>Reviews</Text>
+          <Text fontWeight="bold">{item.reviewCount}</Text>
+          <Text color="textSecondary">Reviews</Text>
         </View>
         <View style={styles.statItem}>
-          <Text style={styles.statCount}>{item.ratingAverage}</Text>
-          <Text style={styles.statLabel}>Rating</Text>
+          <Text fontWeight="bold">{item.ratingAverage}</Text>
+          <Text color="textSecondary">Rating</Text>
         </View>
       </View>
     </View>
