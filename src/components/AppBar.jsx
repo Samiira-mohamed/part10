@@ -50,6 +50,11 @@ const AppBar = () => {
             <Text style={styles.tabText}>Create a review</Text>
           </Link>
         )}
+        {isSignedIn && (
+          <Link to="/myreviews" component={Pressable} style={styles.tab}>
+            <Text style={styles.tabText}>My reviews</Text>
+          </Link>
+        )}
         {isSignedIn ? (
           <Pressable onPress={handleSignOut} style={styles.tab}>
             <Text style={styles.tabText}>Sign out</Text>
