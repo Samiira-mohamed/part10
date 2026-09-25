@@ -6,7 +6,7 @@ Full Stack Open Part 10 - React Native application for rating GitHub repositorie
 
 Scan the QR code below with the Expo Go app to try the application:
 
-![QR Code](qr-code.png)
+![QR Code](qr-code.svg)
 
 ## Features
 
